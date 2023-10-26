@@ -1,0 +1,37 @@
+<ion-menu contentId="main-content">
+    <ion-header>
+
+        <ion-toolbar>
+            <ion-title><ion-menu-toggle> Menu</ion-menu-toggle></ion-title>
+        </ion-toolbar>
+
+    </ion-header>
+
+    <ion-content color="dark">
+        <ion-button (click)="miperfil()" style="margin-top: 5%;" expand="block" color="secondary" shape="round">
+            <strong>Mi perfil</strong>
+        </ion-button>
+
+        <ion-button   routerLink="/registro-asistencia" expand="block" color="secondary" shape="round">
+            <strong>Profesor 1</strong>
+        </ion-button>
+
+        <ion-button  expand="block" color="secondary" shape="round">
+            <strong>Profesor 2</strong>
+        </ion-button>
+
+        <ion-button  expand="block" color="secondary" shape="round">
+            <strong>Alumno 1</strong>
+        </ion-button>
+
+        <ion-button  expand="block" color="secondary" shape="round">
+            <strong >Alumno 2</strong>
+        </ion-button>
+
+        <ion-button  (click)="cerrarsesion()" expand="block" color="danger" shape="round">
+            <strong>Cerrar Sesión</strong>
+        </ion-button>
+
+    </ion-content>
+
+</ion-menu>
