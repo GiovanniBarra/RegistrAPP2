@@ -14,7 +14,7 @@ export class RegisterPage implements OnInit {
   usuario:Usuario={
     nombre:"",
     nombre_usuario:"",
-    check_profesor:"",
+    check_profesor:false,
     password:""
   }
 

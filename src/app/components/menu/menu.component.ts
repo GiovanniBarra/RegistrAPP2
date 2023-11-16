@@ -3,6 +3,8 @@ import { MiperfilPage } from 'src/app/pages/miperfil/miperfil.page';
 import { NavigationExtras, Router } from '@angular/router';
 import { Storage } from '@ionic/storage-angular';
 import { Usuario } from 'src/app/interfaces/usuario';
+import {BarcodeScanner} from '@awesome-cordova-plugins/barcode-scanner/ngx'
+
 
 @Component({
   selector: 'app-menu',
@@ -14,11 +16,14 @@ export class MenuComponent  implements OnInit {
   usuario:Usuario={
     nombre:"",
     nombre_usuario:"",
-    check_profesor:"",
+    check_profesor:false,
     password:""
   }
 
-  constructor(private router:Router, private storage:Storage) { }
+  texto:string=''
+
+  constructor(private router:Router, private storage:Storage, private barcodescanner:BarcodeScanner) { }
+
 
   ngOnInit() {}
 
@@ -40,6 +45,16 @@ export class MenuComponent  implements OnInit {
   async cerrarsesion(){
     await this.storage.remove("sesion")
     this.router.navigate(["/login"])
+  }
+
+  scan(){
+    this.barcodescanner.scan().then(barcodedata=>{
+      console.log("Scaneando...", barcodedata);
+      this.texto=(JSON.stringify(barcodedata));
+    }).catch(err=>{
+      console.log("ERROR AL ESCANEAR!!!!");
+    })
+
   }
 
 }

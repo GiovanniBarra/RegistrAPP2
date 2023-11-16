@@ -14,7 +14,7 @@ export class MiperfilPage implements OnInit {
     nombre:"",
     nombre_usuario:"",
     password:"",
-    check_profesor:""
+    check_profesor:false
   }
 
   constructor(private router:Router, private storage:Storage) {
