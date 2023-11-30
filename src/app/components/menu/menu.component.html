@@ -13,11 +13,11 @@
         </ion-button>
 
         <ion-button   routerLink="/registro-asistencia" expand="block" color="secondary" shape="round">
-            <strong>Profesor 1</strong>
+            <strong>Generar QR</strong>
         </ion-button>
 
-        <ion-button  expand="block" color="secondary" shape="round">
-            <strong>Profesor 2</strong>
+        <ion-button (click)="listaasistencia()" expand="block" color="secondary" shape="round">
+            <strong>Ver listado de asistencia</strong>
         </ion-button>
 
         <ion-button (click)="scan()" expand="block" color="secondary" shape="round">

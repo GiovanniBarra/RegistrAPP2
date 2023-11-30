@@ -47,6 +47,10 @@ export class MenuComponent  implements OnInit {
     this.router.navigate(["/login"])
   }
 
+  async listaasistencia(){
+    this.router.navigate(["/lista-asistencia"])
+  }
+
   scan(){
     this.barcodescanner.scan().then(barcodedata=>{
       console.log("Scaneando...", barcodedata);

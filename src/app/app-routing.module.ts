@@ -34,6 +34,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/miperfil/miperfil.module').then( m => m.MiperfilPageModule),
     canActivate:[ControlDeSesionGuard]
   },
+  {
+    path: 'lista-asistencia',
+    loadChildren: () => import('./pages/lista-asistencia/lista-asistencia.module').then( m => m.ListaAsistenciaPageModule)
+  },
 ];
 
 @NgModule({
